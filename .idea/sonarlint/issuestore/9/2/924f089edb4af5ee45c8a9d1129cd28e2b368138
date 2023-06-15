@@ -1,0 +1,46 @@
+
+—
+java:S1192&"|Define a constant instead of duplicating this literal "
+----------------------------------------------------------" 4 times.(ãàÜşÿÿÿÿ
+0
+java:S1220""Move this file to a named package.
+N
+java:S1854"8Remove this useless assignment to local variable "name".(µÏóé
+a
+java:S1854%"LRemove this useless assignment to local variable "carOwnerShipStatusNumber".(«³Èj
+\
+java:S1854#"ARemove this useless assignment to local variable "childQuantity".(¡³Ùñûÿÿÿÿ
+]
+java:S1854!"GRemove this useless assignment to local variable "maritalStatusNumber".(œ¬©ü
+?
+java:S1481")Remove this unused "name" local variable.(Ê§…ñ
+S
+java:S1481
+"8Remove this unused "maritalStatusNumber" local variable.(©œãúÿÿÿÿ
+H
+java:S1481"2Remove this unused "maritalStatus" local variable.(ñ›Ú
+M
+java:S1481"2Remove this unused "childQuantity" local variable.(¯İÂ§úÿÿÿÿ
+R
+java:S1481"=Remove this unused "carOwnerShipStatusNumber" local variable.(»‘ƒ
+M
+java:S1481"7Remove this unused "carOwnerShipStatus" local variable.(¾Æö¶
+S	java:S106"9Replace this use of System.out or System.err by a logger.(”Û²şÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(´ëÉº
+N	java:S106"9Replace this use of System.out or System.err by a logger.(•º—ª
+N	java:S106"9Replace this use of System.out or System.err by a logger.(÷ Ãş
+S	java:S106"9Replace this use of System.out or System.err by a logger.(‡™‡åøÿÿÿÿ
+S	java:S106 "9Replace this use of System.out or System.err by a logger.(íƒ‡ıÿÿÿÿ
+N	java:S106""9Replace this use of System.out or System.err by a logger.(ßâÓ
+S	java:S106$"9Replace this use of System.out or System.err by a logger.(“×›øûÿÿÿÿ
+S	java:S106&"9Replace this use of System.out or System.err by a logger.(ãàÜşÿÿÿÿ
+S	java:S106/"9Replace this use of System.out or System.err by a logger.(æÜ¹¥øÿÿÿÿ
+N	java:S1060"9Replace this use of System.out or System.err by a logger.(Ûˆúœ
+S	java:S1061"9Replace this use of System.out or System.err by a logger.(ãàÜşÿÿÿÿ
+N	java:S1065"9Replace this use of System.out or System.err by a logger.(äÊÔ
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(‹¿¹±ıÿÿÿÿ
+S	java:S1068"9Replace this use of System.out or System.err by a logger.(ãàÜşÿÿÿÿ
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(’‰Ãùÿÿÿÿ
+S	java:S106="9Replace this use of System.out or System.err by a logger.(­›Ôÿûÿÿÿÿ
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(ãàÜşÿÿÿÿ
+Q	java:S125B"<This block of commented-out lines of code should be removed.(Ç‘½Í
