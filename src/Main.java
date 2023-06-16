@@ -20,8 +20,28 @@ public class Main {
         //--------------Welcome to Budget Calculator----------------//
         System.out.println("\n--------------Welcome to Budget Calculator----------------");
         System.out.println("---------Please enter your Personal Information-----------\n");
-        System.out.print("Please enter your name: ");
-        name = input.next();
+
+
+        //--------------------Name validation-----------------------//
+
+        while (!validInput){
+            try{
+                System.out.print("Please enter your name: ");
+                name = input.next();
+                while (name.length() < 3 || name.length() > 20) {
+                    System.out.print("\nPlease enter a valid name (3 - 20 characters): ");
+                    name = input.next();
+                }
+                validInput = true;
+            }catch (Exception e){
+                System.out.println("\nInvalid input! Please enter a valid name. ");
+                // Clear the keyboard input
+                input.nextLine();
+            }
+        }
+
+
+        validInput = false;
 
         //--------------------Age validation------------------------//
         while(!validInput){
@@ -34,7 +54,7 @@ public class Main {
                 }
                 validInput = true;
             }catch (Exception e){
-                System.out.println("\nInvalid input! Please enter a valid integer.");
+                System.out.println("\nInvalid input! Please enter a valid integer. ");
                 // Clear the keyboard input
                 input.nextLine();
             }
@@ -54,7 +74,7 @@ public class Main {
                 }
                 validInput = true;
             }catch (Exception e){
-                System.out.print("\nPlease enter a valid marital status (1:Single,2:Married): ");
+                System.out.print("\nInvalid input ! Please enter a valid marital status. ");
                 // Clear the keyboard input
                 input.nextLine();
             }
@@ -74,7 +94,7 @@ public class Main {
                 }
                 validInput = true;
             }catch (Exception e){
-                System.out.print("\nPlease enter a valid child quantity (0-2 child): ");
+                System.out.print("\nInvalid input! Please enter a valid quantity. ");
                 // Clear the keyboard input
                 input.nextLine();
             }
@@ -93,7 +113,7 @@ public class Main {
                 }
                 validInput = true;
             }catch (Exception e){
-                System.out.print("\nPlease enter a valid car ownership status (0:Public Transport,1:Self-Car): ");
+                System.out.print("\nInvalid input! Please enter a valid car ownership status. ");
                 // Clear the keyboard input
                 input.nextLine();
             }
@@ -147,7 +167,7 @@ public class Main {
                 user.setSalary(salary);
                 validInput = true;
             }catch (Exception e){
-                System.out.print("\nPlease enter a valid salary: ");
+                System.out.print("\nInvalid input! Please enter a valid salary. ");
                 // Clear the keyboard input
                 input.nextLine();
             }
