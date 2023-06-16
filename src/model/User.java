@@ -94,6 +94,7 @@ public class User {
     //-----Compare the Want and Needs with Suggested Expenses----//
     public String compareWithSuggestedExpenses(){
         String isExceeds;
+        String budgetList;
         Budget budget = new Budget(salary);
         budget.allocateBudget();
 
@@ -101,15 +102,18 @@ public class User {
         double needAndWants =  budget.getNeeds() + budget.getWants();
 
         // Get difference amount
-        double getDifference = getAllocatedBudget() - needAndWants;
+        double getDifference = Math.abs(getAllocatedBudget() - needAndWants);
+
+        // Print Budget List
+        budgetList = budget.toString();
 
         // Compare
         isExceeds = (needAndWants > getAllocatedBudget())
-                ? "According the government suggested expenses budget, " +
+                ? "\n\nAccording the government suggested expenses budget, " +
                 "\nyour expenses has higher than suggested expenses budget, it has exceeded RM "  + Formatter.formattedDecimal(getDifference)
-                : "According the government suggested expenses budget, " +
-                "\nyour expenses has lower than suggested expenses budget, it has left RM "  + Formatter.formattedDecimal(getDifference);
-        return isExceeds;
+                : "\n\nAccording the government suggested expenses budget, " +
+                "\nyour expenses has lower than suggested expenses budget, it has lower than RM "  + Formatter.formattedDecimal(getDifference);
+        return (budgetList + isExceeds);
     }
     //-----------------------------------------------------------//
 

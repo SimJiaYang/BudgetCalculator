@@ -49,12 +49,12 @@ public class Budget {
 
     @Override
     public String toString() {
-        return "Budget" +
-                "\nshortTermSaving=" + shortTermSaving +
-                "\nmediumTermSaving=" + mediumTermSaving +
-                "\nlongTermSaving=" + longTermSaving +
-                "\nwants=" + wants +
-                "\nneeds=" + needs;
+        return "Suggested budget list based on your Salary" +
+                "\n- Short Term Saving = RM " + shortTermSaving +
+                "\n- Medium Term Saving = RM " + mediumTermSaving +
+                "\n- Long Term Saving = RM " + longTermSaving +
+                "\n- Wants = RM " + wants +
+                "\n- Needs = RM " + needs;
     }
 
 }

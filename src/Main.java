@@ -99,6 +99,9 @@ public class Main {
             }
         }
 
+        validInput = false;
+
+
         //----------------------------------------------------------//
 
         //--------------Make the main thread sleep------------------//
@@ -133,9 +136,23 @@ public class Main {
 
         //---------------------Enter the Salary---------------------//
         System.out.println("\n\n\n-------------------Provide us your Salary-----------------");
-        System.out.print("\nPlease enter your salary: ");
-        salary = input.nextDouble();
-        user.setSalary(salary);
+        while (!validInput){
+            try{
+                System.out.print("\nPlease enter your salary: ");
+                salary = input.nextDouble();
+                while (salary <=0){
+                    System.out.print("\nPlease enter a valid salary: ");
+                    salary = input.nextDouble();
+                }
+                user.setSalary(salary);
+                validInput = true;
+            }catch (Exception e){
+                System.out.print("\nPlease enter a valid salary: ");
+                // Clear the keyboard input
+                input.nextLine();
+            }
+        }
+
         System.out.println("\n----------------------------------------------------------");
         //----------------------------------------------------------//
 
