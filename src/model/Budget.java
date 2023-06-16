@@ -8,7 +8,7 @@ public class Budget {
     private double needs;
     private double salary;
 
-    public Budget(double salary){
+    protected Budget(double salary){
         this.salary = salary;
     }
 

@@ -100,8 +100,15 @@ public class User {
         // Get need and wants
         double needAndWants =  budget.getNeeds() + budget.getWants();
 
+        // Get difference amount
+        double getDifference = getAllocatedBudget() - needAndWants;
+
         // Compare
-        isExceeds = (needAndWants > getAllocatedBudget())? "Your expenses has exceeded the budget" : "Your expenses is within the budget";
+        isExceeds = (needAndWants > getAllocatedBudget())
+                ? "According the government suggested expenses budget, " +
+                "\nyour expenses has higher than suggested expenses budget, it has exceeded RM "  + Formatter.formattedDecimal(getDifference)
+                : "According the government suggested expenses budget, " +
+                "\nyour expenses has lower than suggested expenses budget, it has left RM "  + Formatter.formattedDecimal(getDifference);
         return isExceeds;
     }
     //-----------------------------------------------------------//
@@ -117,8 +124,8 @@ public class User {
                         "\nMarital Status: " + maritalStatus +
                         "\nChild Quantity: " + child +
                         "\nCar OwnerShip Status: " + carOwnerShipStatus +
-                        "\nSalary: " + Formatter.formattedDecimal(salary) +
-                        "\n"+ compareWithSuggestedExpenses() +
+                        "\nSalary: RM " + Formatter.formattedDecimal(salary) +
+                        "\n\n"+ compareWithSuggestedExpenses() +
                         "\n\n----------------------------------------------------------\n";
     }
     //-----------------------------------------------------------//

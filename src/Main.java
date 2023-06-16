@@ -6,14 +6,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         String name = "";
-        int age;
-        int maritalStatusNumber;
+        int age = 0;
+        int maritalStatusNumber = 0;
         String maritalStatus = "";
-        int childQuantity;
-        int carOwnerShipStatusNumber;
+        int childQuantity = 0;
+        int carOwnerShipStatusNumber = 0;
         String carOwnerShipStatus =  "";
-        Scanner input = new Scanner(System.in);
         double salary;
+
+        Scanner input = new Scanner(System.in);
+        boolean validInput = false;
 
         //--------------Welcome to Budget Calculator----------------//
         System.out.println("\n--------------Welcome to Budget Calculator----------------");
@@ -22,38 +24,90 @@ public class Main {
         name = input.next();
 
         //--------------------Age validation------------------------//
-        System.out.print("Please enter your age (12-100): ");
-        age = input.nextInt();
-        while (age < 12 || age > 100) {
-            System.out.print("Please enter a valid age (12 -100): ");
-            age = input.nextInt();
+        while(!validInput){
+            try{
+                System.out.print("Please enter your age (12-100): ");
+                age = input.nextInt();
+                while (age < 12 || age > 100) {
+                    System.out.print("\nPlease enter a valid age (12 -100): ");
+                    age = input.nextInt();
+                }
+                validInput = true;
+            }catch (Exception e){
+                System.out.println("\nInvalid input! Please enter a valid integer.");
+                // Clear the keyboard input
+                input.nextLine();
+            }
         }
+
+        validInput = false;
+
 
         //-------------------Marital validation---------------------//
-        System.out.print("Please enter your marital status (1:Single,2:Married): ");
-        maritalStatusNumber = input.nextInt();
-        while (maritalStatusNumber<1 || maritalStatusNumber>2) {
-            System.out.print("Please enter a valid marital status (1:Single,2:Married): ");
-            maritalStatusNumber  = input.nextInt();
+        while (!validInput){
+            try{
+                System.out.print("Please enter your marital status (1:Single,2:Married): ");
+                maritalStatusNumber = input.nextInt();
+                while (maritalStatusNumber<1 || maritalStatusNumber>2) {
+                    System.out.print("\nPlease enter a valid marital status (1:Single,2:Married): ");
+                    maritalStatusNumber  = input.nextInt();
+                }
+                validInput = true;
+            }catch (Exception e){
+                System.out.print("\nPlease enter a valid marital status (1:Single,2:Married): ");
+                // Clear the keyboard input
+                input.nextLine();
+            }
         }
+
+        validInput = false;
+
 
         //-----------------Child Quantity validation----------------//
-        System.out.print("Please enter your child quantity (0-2 child): ");
-        childQuantity = input.nextInt();
-        while (childQuantity<0 || childQuantity>2) {
-            System.out.print("Please enter a valid child quantity (0-2 child): ");
-            childQuantity  = input.nextInt();
+        while (!validInput){
+            try{
+                System.out.print("Please enter your child quantity (0-2 child): ");
+                childQuantity = input.nextInt();
+                while (childQuantity<0 || childQuantity>2) {
+                    System.out.print("\nPlease enter a valid child quantity (0-2 child): ");
+                    childQuantity  = input.nextInt();
+                }
+                validInput = true;
+            }catch (Exception e){
+                System.out.print("\nPlease enter a valid child quantity (0-2 child): ");
+                // Clear the keyboard input
+                input.nextLine();
+            }
         }
 
+        validInput = false;
+
         //-----------------Car Ownership validation-----------------//
-        System.out.print("Please enter your car ownership status (0:Public Transport,1:Self-Car): ");
-        carOwnerShipStatusNumber = input.nextInt();
-        while (carOwnerShipStatusNumber<0 || carOwnerShipStatusNumber>1) {
-            System.out.print("Please enter a valid car ownership status (0:Public Transport,1:Self-Car): ");
-            carOwnerShipStatusNumber  = input.nextInt();
+        while (!validInput){
+            try{
+                System.out.print("Please enter your car ownership status (0:Public Transport,1:Self-Car): ");
+                carOwnerShipStatusNumber = input.nextInt();
+                while (carOwnerShipStatusNumber<0 || carOwnerShipStatusNumber>1) {
+                    System.out.print("\nPlease enter a valid car ownership status (0:Public Transport,1:Self-Car): ");
+                    carOwnerShipStatusNumber  = input.nextInt();
+                }
+                validInput = true;
+            }catch (Exception e){
+                System.out.print("\nPlease enter a valid car ownership status (0:Public Transport,1:Self-Car): ");
+                // Clear the keyboard input
+                input.nextLine();
+            }
         }
-        System.out.println("\n----------------------------------------------------------");
+
         //----------------------------------------------------------//
+
+        //--------------Make the main thread sleep------------------//
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            System.out.println("Thread Error");
+            System.exit(0);
+        }
 
 
         //---------------------Pass the data------------------------//
@@ -84,6 +138,7 @@ public class Main {
         user.setSalary(salary);
         System.out.println("\n----------------------------------------------------------");
         //----------------------------------------------------------//
+
 
         //--------------Compare with Suggested Expenses-------------//
         System.out.println("\n\n\n----------------------Compare Result----------------------");
